@@ -11,6 +11,8 @@ import (
 )
 
 func main() {
+	header()
+
 	if len(os.Args) <= 1 {
 		fmt.Println(" Please provide a directory path as an argument.")
 		os.Exit(1)
@@ -35,6 +37,7 @@ func main() {
 	}
 }
 
+// extIndex returns a description based on file extension
 func extIndex(ext string) string {
 	switch ext {
 	case ".txt":
@@ -48,4 +51,9 @@ func extIndex(ext string) string {
 	default:
 		return "Unknown File Type"
 	}
+}
+
+func header() {
+	fmt.Println("File Organizer")
+	fmt.Println("================")
 }
